@@ -100,7 +100,7 @@ class LinkedList:
             curnt_index += 1
 
     #------------------------------------------------------------
-    #TRAVERSE and delete the data to perticular INDEX
+    #TRAVERSE and DELETE the data from perticular INDEX
     def delDataFromIndex(self, index):
         if index >= self.length() or index <= -1:
             print("\n<ERROR: 'Delete': Index out of range !!! >")
@@ -115,6 +115,23 @@ class LinkedList:
                 last_node.next = curnt_node.next
                 return
             curnt_index += 1
+    
+    #TRAVERSE and DELETE the data from the FIRST index of the linked list
+    def delDataFromFirst(self):
+        if self.head == None:
+            print("Already Empty Linked-list !!!")
+        else:
+            self.head = self.head.next
+
+    #TRAVERSE and DELETE the data from the END index of the linked list
+    def delDataFromEnd(self):
+        temp = self.head
+        curnt_node = self.head.next
+        while curnt_node.next != None:
+            temp = curnt_node
+            curnt_node = curnt_node.next
+        temp.next = None
+        
 
 
 
@@ -152,7 +169,16 @@ my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
 my_list.insertDataAtIndex(3, 888)
+print()
+my_list.display()
+print(f"Lenght of list: {my_list.length()}")
 
+my_list.delDataFromEnd()
+print()
+my_list.display()
+print(f"Lenght of list: {my_list.length()}")
+
+my_list.delDataFromFirst()
 print()
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
