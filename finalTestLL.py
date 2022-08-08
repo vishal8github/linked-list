@@ -12,17 +12,18 @@ class LinkedList:
 
     #------------------------------------------------------------
     #INSERT node AT the START of the linked list
-    def insertAtStart(self, data):
+    def insertDataAtStart(self, data):
         newNode = Node(data)
 
+        if self.head.next == None:
+            self.head.next = newNode.next
+            return
         temp = self.head.next
-
         self.head.next = newNode
-
         newNode.next = temp
 
     #INSERT node AT the END of the linked list
-    def insertAtEnd(self, data):
+    def insertDataAtEnd(self, data):
         newNode = Node(data)
         curnt_node = self.head
 
@@ -68,7 +69,7 @@ class LinkedList:
         while curnt_node.next != None:
             curnt_node = curnt_node.next
             elems.append(curnt_node.data)
-        print(f"\nLinked list: {elems}")
+        print(f"Linked list: {elems}")
 
     #------------------------------------------------------------
     #TRAVERSE and get the data from perticular INDEX
@@ -141,44 +142,52 @@ my_list = LinkedList()
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
-my_list.insertAtEnd(11)
-my_list.insertAtEnd(22)
-my_list.insertAtEnd(33)
-my_list.insertAtEnd(44)
-my_list.insertAtEnd(55)
-
+print("\nINSERTING data...")
+my_list.insertDataAtEnd(11)
+my_list.insertDataAtEnd(22)
+my_list.insertDataAtEnd(33)
+my_list.insertDataAtEnd(44)
+my_list.insertDataAtEnd(55)
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
-my_list.insertAtStart(99)
-
+print("\nINSERTING data at the start of the list...")
+my_list.insertDataAtStart(99)
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
-print(f"\nGet data from index 2: {my_list.getDataFromIndex(2)}")
+print("\nGETTING data from the specified index of the list...")
+my_list.display()
+print(f"Get data from index 2: {my_list.getDataFromIndex(2)}")
 
+print("\nSETTING data to the specified index of the list...")
 my_list.setDataToIndex(2, 70)
-
-print(f"\nGet data from index 2: {my_list.getDataFromIndex(2)}")
-
-print()
+print(f"Set data to index 2: {my_list.getDataFromIndex(2)}")
 my_list.display()
+
+print("\nDELETING data from the specified index of the list...")
+print(f"DELETE data from index 2: {my_list.getDataFromIndex(2)}")
 my_list.delDataFromIndex(2)
-print()
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
+print("\nINSERTING data at the specified index of the list...")
+print("INSERT data at index 3: 888")
 my_list.insertDataAtIndex(3, 888)
-print()
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
+print("\nDELETING data from the end of the list...")
 my_list.delDataFromEnd()
-print()
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
+print("\nDELETING data from the first of the list...")
 my_list.delDataFromFirst()
-print()
+my_list.display()
+print(f"Lenght of list: {my_list.length()}")
+
+print("\nINSERTING data at the start of the list...")
+my_list.insertDataAtStart(120)
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
