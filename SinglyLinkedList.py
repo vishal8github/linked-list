@@ -12,7 +12,7 @@ class SinglyLinkedList:
 
     #------------------------------------------------------------
     #INSERT node AT the START of the linked list
-    def insertDataAtStart(self, data):
+    def push(self, data):
         newNode = Node(data)
 
         if self.head.next == None:
@@ -23,7 +23,7 @@ class SinglyLinkedList:
         newNode.next = temp
 
     #INSERT node AT the END of the linked list
-    def insertDataAtEnd(self, data):
+    def append(self, data):
         newNode = Node(data)
         curnt_node = self.head
 
@@ -143,16 +143,16 @@ my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
 print("\nINSERTING data...")
-my_list.insertDataAtEnd(11)
-my_list.insertDataAtEnd(22)
-my_list.insertDataAtEnd(33)
-my_list.insertDataAtEnd(44)
-my_list.insertDataAtEnd(55)
+my_list.append(11)
+my_list.append(22)
+my_list.append(33)
+my_list.append(44)
+my_list.append(55)
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
 print("\nINSERTING data at the start of the list...")
-my_list.insertDataAtStart(99)
+my_list.push(99)
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
@@ -188,6 +188,6 @@ my_list.display()
 print(f"Lenght of list: {my_list.length()}")
 
 print("\nINSERTING data at the start of the list...")
-my_list.insertDataAtStart(120)
+my_list.push(120)
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
