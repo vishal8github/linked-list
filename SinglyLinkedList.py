@@ -5,7 +5,7 @@ class Node:
         self.next = None
 
 
-class LinkedList:
+class SinglyLinkedList:
     def __init__(self):
         #initialize HEAD node
         self.head = Node()
@@ -137,7 +137,7 @@ class LinkedList:
 
 
 #Execution starts from here ***
-my_list = LinkedList()
+my_list = SinglyLinkedList()
 
 my_list.display()
 print(f"Lenght of list: {my_list.length()}")
