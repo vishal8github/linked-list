@@ -16,7 +16,7 @@ class SinglyLinkedList:
         newNode = Node(data)
 
         if self.head.next == None:
-            self.head.next = newNode.next
+            self.head.next = newNode
             return
         temp = self.head.next
         self.head.next = newNode
@@ -113,6 +113,9 @@ class SinglyLinkedList:
             last_node = curnt_node
             curnt_node = curnt_node.next
             if curnt_index == index:
+                if index == self.length()-1:
+                    last_node.next = None
+                    break
                 last_node.next = curnt_node.next
                 return
             curnt_index += 1
@@ -126,12 +129,15 @@ class SinglyLinkedList:
 
     #TRAVERSE and DELETE the data from the END index of the linked list
     def delDataFromEnd(self):
-        temp = self.head
+        if self.head == None:
+            print("Already Empty Linked-list !!!")
+            return
+        last_node = self.head
         curnt_node = self.head.next
         while curnt_node.next != None:
-            temp = curnt_node
+            last_node = curnt_node
             curnt_node = curnt_node.next
-        temp.next = None
+        last_node.next = None
         
 
 
